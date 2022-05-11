@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/현준이 시험용.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Document</title>
+</head>
+<body style="background-color:#eee;">
+  <div class="row w-100">
+    <div class="col-1"></div>
+    <div class="col-10">
+      <div class="row white-box main-box mt-3">
+        <h3  class="fs-1 f2-bold"style="text-align: center;">영단어 시험지</h3>
+        <div class="row name">
+          <div class="col-4"><button type="button" id="output" class="btn btn-dark">Dark</button></div>
+          <div class="col-5"></div>
+          <div class="col-3 a row">
+            <div class="col-3"><p class="ml-1 m-0">이름: </p></div>
+            <div class="col-9"><input type="text" name="" id=""></div>
+          </div>
+        </div>
+        <div class="mt-5 mb-2" style="width:100%; height:5px; background-color:#eee"></div>
+      </div>
+    </div>
+    <div class="col-1"></div>
+  </div>
+  <script>
+    var answer=''
+    var question=''
+    var fail=[]
+    var wrong=0
+    $.get('/test.json').then((data)=>{
+      answer=data.A
+      question=data.Q
+      for (let i=0; i<question.length;i++){
+        var a=`<div class="col-6 a row">
+          <div class="col-4">
+            <p style="margin-bottom:0; padding-right:6px; text-align:right;" class="fs-3">${question[i]}:</p>
+          </div>
+          <div class="col-8">
+            <input id="input${i}" class="w-50 h-75 fs-3"type="text"></div>
+          </div>`
+        $('.main-box').append(a)
+      }
+    })
+    $('#output').click(()=>{
+      for(i=0; i<question.length; i++){
+        if($(`#input${i}`).val()==answer[i]){
+        }
+        else{
+          fail.push(answer[i])
+          wrong++;
+        }
+      }
+      alert('정답: '+(answer.length-wrong)+'/'+answer.length)
+      console.log(wrong)
+      wrong=0
+    })
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
