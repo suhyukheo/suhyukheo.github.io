@@ -11,13 +11,34 @@
   <title>Document</title>
 </head>
 <body style="background-color:#eee;">
+  <div class="modal" tabindex="-1">
+    <div class="modal-dialog" style="max-width:1000px;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">채점결과</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="white-box-v2 row right">
+            <div style="text-align:center;"><h3>정답</h3></div>
+            <div class="w-100 mb-4" style="height:2px; background-color:#eee"></div>
+          </div>
+          <div class="white-box-v2 row wrong">
+            <div style="text-align:center;"><h3>오답</h3></div>
+            <div class="w-100 mb-4" style="height:2px; background-color:#eee"></div>
+          </div>
+          <div class="white-box-v2 total W-100 row"></div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="row w-100">
     <div class="col-1"></div>
     <div class="col-10">
       <div class="row white-box main-box mt-3">
         <h3  class="fs-1 f2-bold"style="text-align: center;">영단어 시험지</h3>
         <div class="row name">
-          <div class="col-4"><button type="button" id="output" class="btn btn-dark">Dark</button></div>
+          <div class="col-4"><button type="button" id="output" class="btn btn-dark btn-score">채점하기</button></div>
           <div class="col-5"></div>
           <div class="col-3 a row">
             <div class="col-3"><p class="ml-1 m-0">이름: </p></div>
@@ -34,6 +55,7 @@
     var question=''
     var fail=[]
     var wrong=0
+    var cnt=0
     $.get('/test.json').then((data)=>{
       answer=data.A
       question=data.Q
@@ -48,18 +70,41 @@
         $('.main-box').append(a)
       }
     })
+    $('.btn-close').click((e)=>{
+      $('.modal').css('display','none')
+    })
     $('#output').click(()=>{
-      for(i=0; i<question.length; i++){
-        if($(`#input${i}`).val()==answer[i]){
-        }
-        else{
-          fail.push(answer[i])
-          wrong++;
-        }
+      cnt++;
+      if (cnt==1){
+        $('#output').html('채점결과 확인하기')
       }
-      alert('정답: '+(answer.length-wrong)+'/'+answer.length)
-      console.log(wrong)
-      wrong=0
+      else if(cnt>1){
+        console.log('여기는 실행이 됩니다.. ㄷㄷ')
+        for (i=0;i<question.length;i++){
+          if($(`#input${i}`).val()==answer[i]){
+            var a=`<div class="col-6"><p>정답: ${answer[i]}</p></div>
+            <div class="col-6"><p>작성한 답: ${$(`#input${i}`).val()}</p></div>`
+            $('.right').append(a)
+            wrong++;
+          }
+          else{
+            var a=`<div class="col-6"><p>정답: ${answer[i]}</p></div>
+            <div class="col-6"><p>작성한 답: ${$(`#input${i}`).val()}</p></div>`
+            $('.wrong').append(a)
+
+          }
+        }
+        var b=`<div class="col-6"><p class="fs-2">최종점수!!:${(wrong/question.length)*100}</p></div>
+                <div class="col-6"></div>`
+        $('.total').append(b)
+        $('.modal').css('display','block')
+      }
+      $('input').keydown(function(e) {
+        var idx = $('input').index(this); // index가 바로 eq 값을 알려주는 친
+        if (e.keyCode === 13) {
+          $('input').eq(idx+1).focus();
+        };
+      });
     })
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
