@@ -78,10 +78,11 @@
       if (cnt==1){
         $('#output').html('채점결과 확인하기')
       }
-      else if(cnt>1){
-        console.log('여기는 실행이 됩니다.. ㄷㄷ')
+      else if(cnt==2){
         for (i=0;i<question.length;i++){
-          if($(`#input${i}`).val()==answer[i]){
+          var ans=answer[i].split(',')
+
+          if (ans.includes($(`#input${i}`).val())==true){
             var a=`<div class="col-6"><p>정답: ${answer[i]}</p></div>
             <div class="col-6"><p>작성한 답: ${$(`#input${i}`).val()}</p></div>`
             $('.right').append(a)
@@ -91,12 +92,14 @@
             var a=`<div class="col-6"><p>정답: ${answer[i]}</p></div>
             <div class="col-6"><p>작성한 답: ${$(`#input${i}`).val()}</p></div>`
             $('.wrong').append(a)
-
           }
         }
         var b=`<div class="col-6"><p class="fs-2">최종점수!!:${(wrong/question.length)*100}</p></div>
                 <div class="col-6"></div>`
         $('.total').append(b)
+        $('.modal').css('display','block')
+      }
+      else{
         $('.modal').css('display','block')
       }
     })
