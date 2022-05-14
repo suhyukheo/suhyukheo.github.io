@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="../css/현준이 시험용.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <title>Document</title>
+  <title>현준이 시험지</title>
 </head>
 <body style="background-color:#eee;">
   <div class="modal" tabindex="-1">
@@ -20,6 +20,9 @@
         </div>
         <div class="modal-body">
           <div class="white-box-v2 row right">
+            <div class="destiny-box row">
+              </div>
+            </div>
             <div style="text-align:center;"><h3>정답</h3></div>
             <div class="w-100 mb-4" style="height:2px; background-color:#eee"></div>
           </div>
@@ -49,6 +52,7 @@
       </div>
     </div>
     <div class="col-1"></div>
+    <source src="/video/KakaoTalk_20220514_174600903.jpg">
   </div>
   <script>
     var answer=''
@@ -72,6 +76,7 @@
     })
     $('.btn-close').click((e)=>{
       $('.modal').css('display','none')
+      $('.modal').removeClass('움찔움찔')
     })
     $('#output').click(()=>{
       cnt++;
@@ -97,6 +102,25 @@
         var b=`<div class="col-6"><p class="fs-2">최종점수!!:${(wrong/question.length)*100}</p></div>
                 <div class="col-6"></div>`
         $('.total').append(b)
+        console.log((wrong/question.length)*100)
+        if ((wrong/question.length)*100>=70){
+          var c=`<div class="col-4" style="margin:none;">
+            <video autoplay muted loop>
+            <source src="/video/KakaoTalk_20220514_172823622.mp4">
+            </video></div>`
+          for (let i=0;i<3;i++){
+            $('.destiny-box').append(c)
+          }
+        }
+        else{
+          console.log('실행되는데?')
+          var d=`<div class="col-3" style="margin:none;"><img src="/video/KakaoTalk_20220514_174823471.png" alt=""></div>`
+            for (let i=0 ; i<4 ;i++){
+              console.log('실행되는데?')
+              $('.destiny-box').append(d)
+            }
+          $('.modal').addClass('움찔움찔')   
+        }
         $('.modal').css('display','block')
       }
       else{
