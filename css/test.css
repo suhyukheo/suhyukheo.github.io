@@ -1,0 +1,47 @@
+@charset "UTF-8";
+.col-1 {
+  height: 100px;
+  transition: all 1s;
+}
+
+.c-ch {
+  -webkit-animation-name: 빠밤;
+          animation-name: 빠밤;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-iteration-count: 2;
+          animation-iteration-count: 2;
+}
+
+.main-box {
+  width: 100%;
+  height: 1000px;
+}
+
+@-webkit-keyframes 빠밤 {
+  0% {
+    scale: 1;
+  }
+  50% {
+    border-radius: 100%;
+    scale: 0.1;
+  }
+  100% {
+    scale: 1;
+    border-radius: 0px;
+  }
+}
+
+@keyframes 빠밤 {
+  0% {
+    scale: 1;
+  }
+  50% {
+    border-radius: 100%;
+    scale: 0.1;
+  }
+  100% {
+    scale: 1;
+    border-radius: 0px;
+  }
+}/*# sourceMappingURL=test.css.map */
