@@ -60,7 +60,7 @@
     var fail=[]
     var wrong=0
     var cnt=0
-    $.get('/test.json').then((data)=>{
+    $.get('/json/test.json').then((data)=>{
       answer=data.A
       question=data.Q
       for (let i=0; i<question.length;i++){

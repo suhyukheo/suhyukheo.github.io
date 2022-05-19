@@ -23,7 +23,7 @@
   25%{
   }
   50%{
-    border-radius: 100%;
+    border-radius: 50%;
     scale: 0.1;
   }
   75%{
@@ -33,4 +33,7 @@
     scale: 1;
     border-radius: 0px;
   }
+}
+@media screen{
+  
 }
