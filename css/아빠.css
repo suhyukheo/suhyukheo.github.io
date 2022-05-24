@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+}
+
+.main-box {
+  background-color: #eee;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.white-box {
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: white;
+}
+
+.sort {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.main-content {
+  height: 1000px;
+  margin: 20px;
+  margin-top: 20px;
+}
+.main-content .title {
+  margin: 5px;
+  width: 100%;
+  height: 10%;
+  border-bottom: 1px solid rgb(177, 177, 177);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-content .title P {
+  font-size: 2vw;
+  margin: 0;
+}
+.main-content .lotto {
+  height: auto;
+  padding: 5%;
+}
+
+.lotto-box {
+  height: 150px;
+  border: 1px solid black;
+}/*# sourceMappingURL=아빠.css.map */
