@@ -50,7 +50,7 @@ function pb_ex(){
 function rand(A){
   var l_content=$(`.lotto-content`)
   var list=make();
-  l_content.append(`<div class="col-2 sort lotto-box sort"><p>${String.fromCharCode(65+A)}자동: </p></div>`)
+  l_content.append(`<div class="col-3 sort lotto-box sort"><p>${String.fromCharCode(65+A)}자동: </p></div>`)
   l_content.append(`<div class="col-7 lotto-box sort row">
   <div class="col-2 lotto-box sort"><p>${list[0]}</p></div>
   <div class="col-2 lotto-box sort"><p>${list[1]}</p></div>
@@ -59,7 +59,7 @@ function rand(A){
   <div class="col-2 lotto-box sort"><p>${list[4]}</p></div>
   <div class="col-2 lotto-box sort"><p>${list[5]}</p></div>
   </div>`)
-  l_content.append(`<div class="col-3 sort lotto-box sort"></div>`)
+  l_content.append(`<div class="col-2 sort lotto-box sort"></div>`)
 }
 
 function recall(price){  
