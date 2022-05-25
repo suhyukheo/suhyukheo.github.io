@@ -1,3 +1,16 @@
+.shake{
+  animation-name: shake;
+  animation-duration: 1s;
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg)}
+  25% { transform: rotate(-8deg)}
+  50% { transform: rotate(8deg)}
+  75% { transform: rotate(-8deg)}
+  100% { transform: rotate(0deg)}
+} 
+
 body{ 
   margin:0; 
   min-width: 1200px;
@@ -10,6 +23,10 @@ div{box-sizing: border-box;
 padding: 20px;}
 p{
   transform: rotate(0.03deg);
+}
+.shake{
+  animation-name:shake;
+  animation-duration : 1s;
 }
 .white-box{
   border: 1px solid black;

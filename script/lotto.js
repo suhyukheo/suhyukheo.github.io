@@ -76,6 +76,13 @@ function mkclick(){
   pb_ex();
   cont++
 }
+function crm(){
+  setTimeout(function(){
+    $('#main-c').removeClass('shake')
+    console.log('1')
+  },1000)
+
+}
 
 
 $('.publisheddate').append(`<div class="col-8 pub"><p>발행일:&nbsp</p></div>
@@ -95,4 +102,8 @@ $('.make10').click((e)=>{
   for(i=0;i<10;i++){
     mkclick();
   }
+})
+$('.shakebtn').click((e)=>{
+  $('#main-c').addClass('shake')
+  crm()
 })
