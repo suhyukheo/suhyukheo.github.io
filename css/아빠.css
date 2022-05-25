@@ -110,6 +110,10 @@ p {
     margin: 0px;
   }
 
+  .col-xl-10 {
+    padding: 0px;
+  }
+
   div {
     box-sizing: border-box;
     padding: 20px;
@@ -154,7 +158,7 @@ p {
     border-bottom: 1px solid gray;
   }
   .main-content .title P {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 0;
   }
   .main-content .lotto {
@@ -169,12 +173,14 @@ p {
   }
   .main-content .lotto .publisheddate p {
     margin-bottom: 0;
+    font-size: 1rem;
   }
   .main-content .lotto .expirydate div {
     padding: 0;
   }
   .main-content .lotto .expirydate p {
     margin-bottom: 0;
+    font-size: 1rem;
   }
   .main-content .button-box {
     padding: 20px;
@@ -198,12 +204,12 @@ p {
     padding: 0px;
   }
   .lotto-box p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 0;
   }
 
   .price {
     padding-top: 0;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }/*# sourceMappingURL=아빠.css.map */

@@ -103,6 +103,9 @@ p{
     padding:0px;
     margin:0px;
   }
+  .col-xl-10{
+    padding: 0px;
+  }
   div{
     box-sizing: border-box;
     padding: 20px;
@@ -140,7 +143,7 @@ p{
       align-items: center;
       border-bottom: 1px solid gray;
       P{
-        font-size: 1.2rem;
+        font-size: 1rem;
         margin:0;
       }
     }
@@ -157,6 +160,7 @@ p{
         }
         p{
           margin-bottom: 0;
+          font-size: 1rem;
         }
       }
       .expirydate{
@@ -165,6 +169,7 @@ p{
         }
         p{
           margin-bottom: 0;
+          font-size: 1rem;
         }
   
       }
@@ -189,13 +194,13 @@ p{
     height: 60px;
     padding: 0px;
     p{
-      font-size: 1.2rem;
+      font-size: 1rem;
       margin-bottom: 0;
     }
   }
   .price{
     padding-top: 0;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   
 }
