@@ -46,6 +46,18 @@ function pb_ex(){
   $('.exp').append(`<p>지급기한:&nbsp${year+1}/&nbsp${month}/&nbsp${date}&nbsp----&nbsp(${week[day]})&nbsp&nbsp${hour}:${minutes}:${Seconds+1}</p>`)
 
 }
+function reset(){
+  $('.publisheddate').html('')
+  $('.publisheddate').append(`<div class="col-8 pub"><p>발행일:&nbsp</p></div>
+   <div class="col-2"></div><div class="col-2"></div>`)
+  $('.expirydate').html('')
+  $('.expirydate').append(`<div class="col-8 exp"><p>지급기한:</p></div>
+  <div class="col-2"></div><div class="col-2prt"></div>`)
+  $('.lotto-content').html('')
+  $('.price').html('')
+  price=0
+  cont=0
+}
 
 function rand(A){
   var l_content=$(`.lotto-content`)
@@ -104,18 +116,16 @@ $('.make10').click((e)=>{
   }
 })
 $('.re').click((e)=>{
-  $('.publisheddate').html('')
-  $('.publisheddate').append(`<div class="col-8 pub"><p>발행일:&nbsp</p></div>
-   <div class="col-2"></div><div class="col-2"></div>`)
-  $('.expirydate').html('')
-  $('.expirydate').append(`<div class="col-8 exp"><p>지급기한:</p></div>
-  <div class="col-2"></div><div class="col-2prt"></div>`)
-  $('.lotto-content').html('')
-  $('.price').html('')
-  price=0
-  cont=0
+  reset()
 })
 $('.shakebtn').click((e)=>{
   $('#main-c').addClass('shake')
   crm()
+  var shcont=price/1000
+  cont=0
+  $('.lotto-content').html('')
+  for (i=0;i<shcont;i++){
+    rand(cont)
+    cont++
+  }
 })
