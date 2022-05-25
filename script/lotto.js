@@ -65,9 +65,9 @@ function rand(A){
 function recall(price){  
  $('.price').html('')
  $('.price').append(`
- <div class="col-2">금액:</div>
- <div class="col-8"></div>
- <div class="col-2 final-price sort">${price}</div>`)
+ <div class="col-3">금액:</div>
+ <div class="col-6"></div>
+ <div class="col-3 final-price sort">${price}</div>`)
 }
 function mkclick(){
   price+=1000
