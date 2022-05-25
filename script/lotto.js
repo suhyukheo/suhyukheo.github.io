@@ -103,6 +103,18 @@ $('.make10').click((e)=>{
     mkclick();
   }
 })
+$('.re').click((e)=>{
+  $('.publisheddate').html('')
+  $('.publisheddate').append(`<div class="col-8 pub"><p>발행일:&nbsp</p></div>
+   <div class="col-2"></div><div class="col-2"></div>`)
+  $('.expirydate').html('')
+  $('.expirydate').append(`<div class="col-8 exp"><p>지급기한:</p></div>
+  <div class="col-2"></div><div class="col-2prt"></div>`)
+  $('.lotto-content').html('')
+  $('.price').html('')
+  price=0
+  cont=0
+})
 $('.shakebtn').click((e)=>{
   $('#main-c').addClass('shake')
   crm()
