@@ -1,0 +1,44 @@
+div {
+  box-sizing: border-box;
+}
+
+.sort {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-box {
+  width: 900px;
+  height: auto;
+  padding: 1%;
+}
+
+.clickbox {
+  height: 0%;
+  margin: 1.1%;
+  width: 31%;
+  padding-bottom: 31%;
+  background-color: aquamarine;
+  border-radius: 10px;
+  border: 10px solid aquamarine;
+}
+
+.click_color {
+  background-color: salmon;
+  border: 10px solid salmon;
+}
+
+.fail_color {
+  background-color: red;
+  border: 10px solid red;
+}
+
+.sucsses_color {
+  background-color: blue;
+  border: 10px solid blue;
+}
+
+.msg {
+  position: fixed;
+}/*# sourceMappingURL=clickgame.css.map */
