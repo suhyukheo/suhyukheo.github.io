@@ -2,6 +2,7 @@ let result
 let lotto
 let cont=0
 let price=0
+let clean=[]
 let week=['일','월','화','수','목','금','토']
 let today=new Date()
 let year = today.getFullYear(); // 년도
@@ -28,7 +29,9 @@ function newtime(){
 function make(){
   lotto=[]
   result=[]
+  clean=document.querySelector('.clean').value.split(',').map(Number)
   for(let i=1;i<46;i++){lotto.push(i)}//로또 입력하기 
+  lotto=lotto.filter((data)=>{return !clean.includes(data)})
   for(let i=0;i<6;i++){ 
     var num=parseInt(Math.random()*(lotto.length-1)+1)
     result.push(lotto[num-1])
@@ -129,3 +132,16 @@ $('.shakebtn').click((e)=>{
     cont++
   }
 })
+
+//여기는 아버지의 
+$('.clean').on('change',((e)=>{
+  clean=e.target.value.split(',').map(Number)
+  for(i=0;i<clean.length;i++){if(clean[i]>=46){clean.splice(i,1)}}
+  console.log(clean)
+  console.log(e.target)
+  console.log(document.querySelector('.clean').value)
+}))
+
+function cleaninput(){
+  
+}

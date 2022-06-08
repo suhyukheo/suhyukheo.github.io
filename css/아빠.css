@@ -120,7 +120,7 @@ p {
 .main-content .button-box {
   padding: 20px;
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 .main-content .button-box button {
   margin-right: 12px;
@@ -237,7 +237,7 @@ p {
   .main-content .button-box {
     padding: 20px;
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
   .main-content .button-box button {
     margin-right: 12px;
